@@ -8,17 +8,16 @@ st.title("Dosya Filtreleme HUB")
 # Kullanıcıdan dosya türünü seçme
 file_type = st.selectbox("Yükleyeceğiniz dosya türünü seçin", ["CSV", "Excel"])
 
-
-
-# Kullanıcıdan dosya yükleme
-def load_data(uploaded_file, file_type):
-    if file_type == "CSV":
-        return pd.read_csv(uploaded_file, sep=";")
-    elif file_type == "Excel":
-        return pd.read_excel(uploaded_file)
+if file_type == "CSV":
+    uploaded_file = st.file_uploader("Bir CSV dosyası yükleyin", type="csv")
+elif file_type == "Excel":
+    uploaded_file = st.file_uploader("Bir Excel dosyası yükleyin", type="xlsx")
 
 if uploaded_file is not None:
-    df = load_data(uploaded_file, file_type)
+    if file_type == "CSV":
+        df = pd.read_csv(uploaded_file, sep=";")
+    elif file_type == "Excel":
+        df = pd.read_excel(uploaded_file)
 
     st.write("Yüklenen Veri Tablosu:")
     st.dataframe(df)
@@ -27,8 +26,6 @@ if uploaded_file is not None:
     st.write(df.describe())
 
     st.write("Veri Filtreleme:")
-    #streamlit run \\kz_fileserver\KIZILAYKART\SUY\JMC_KOORDİNATÖR_YARDIMCILIĞI\Çalışma_Grupları\Ürün ve Bilgi Yönetimi\Ekip İçi Paylaşılanlar\Batuhan\app.py
-    # Sütunları seçmek için çoklu seçim kutusu
     columns_to_filter = st.multiselect("Filtrelemek istediğiniz sütunları seçin", df.columns)
     
     filtered_df = df.copy()
