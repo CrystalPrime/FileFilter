@@ -1,6 +1,3 @@
 [server]
 headless = true
-
-[client]
-caching = true
-displayEnabled = true
+maxMessageSize = 10000000
