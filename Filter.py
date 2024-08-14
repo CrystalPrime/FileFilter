@@ -5,43 +5,6 @@ import io
 
 st.title("Dosya Filtreleme HUB")
 
-st.markdown(
-    """
-    <style>
-
-    .fixed-text-right {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        font-size: 14px;
-        color: #fafafa;
-        background-color: #586e75;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-family: 'Arial', sans-serif;
-        z-index: 9999;
-    }
-
-    .fixed-text-left {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        font-size: 14px;
-        color: #fafafa;
-        background-color: #586e75;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-family: 'Arial', sans-serif;
-        z-index: 9999;
-    }
-    </style>
-
-    <div class="fixed-text-right">Kızılaykart Bilgi Yönetimi</div>
-    <div class="fixed-text-left">Batuhan Aydın</div>
-    """,
-    unsafe_allow_html=True
-)
-
 # Kullanıcıdan dosya türünü seçme
 file_type = st.selectbox("Yükleyeceğiniz dosya türünü seçin", ["CSV", "Excel"])
 
