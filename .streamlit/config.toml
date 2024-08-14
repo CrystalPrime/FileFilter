@@ -1,2 +1,3 @@
 [server]
 maxUploadSize = 1024
+websocket_timeout = 300
