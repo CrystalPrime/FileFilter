@@ -8,17 +8,17 @@ st.title("Dosya Filtreleme HUB")
 # Kullanıcıdan dosya türünü seçme
 file_type = st.selectbox("Yükleyeceğiniz dosya türünü seçin", ["CSV", "Excel"])
 
+
+
 # Kullanıcıdan dosya yükleme
-if file_type == "CSV":
-    uploaded_file = st.file_uploader("Bir CSV dosyası yükleyin", type="csv")
-elif file_type == "Excel":
-    uploaded_file = st.file_uploader("Bir Excel dosyası yükleyin", type="xlsx")
+def load_data(uploaded_file, file_type):
+    if file_type == "CSV":
+        return pd.read_csv(uploaded_file, sep=";")
+    elif file_type == "Excel":
+        return pd.read_excel(uploaded_file)
 
 if uploaded_file is not None:
-    if file_type == "CSV":
-        df = pd.read_csv(uploaded_file, sep=";")
-    elif file_type == "Excel":
-        df = pd.read_excel(uploaded_file)
+    df = load_data(uploaded_file, file_type)
 
     st.write("Yüklenen Veri Tablosu:")
     st.dataframe(df)
