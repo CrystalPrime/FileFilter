@@ -1,2 +1,6 @@
 [server]
 headless = true
+
+[client]
+caching = true
+displayEnabled = true
