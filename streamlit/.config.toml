@@ -1,4 +1,3 @@
 [server]
 headless = true 
 address = "10.6.200.200"  # Cihazınızın yerel IP adresi
-port = "64"
