@@ -1,3 +1,3 @@
 [server]
 headless = true 
-address = "10.6.200.200"  # Cihazınızın yerel IP adresi
+address = "185.225.164.102"  # Cihazınızın yerel IP adresi
