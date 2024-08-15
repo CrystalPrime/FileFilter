@@ -1,4 +1,4 @@
 [server]
-headless = true
+headless = true 
 address = "192.168.80.124"  # Cihazınızın yerel IP adresi
-port = "80"
+port = "64235"
